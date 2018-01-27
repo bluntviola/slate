@@ -13,7 +13,7 @@ toc_footers:
 
 includes:
   - errors
-
+  - user
 search: true
 ---
 
@@ -236,4 +236,52 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
+
+
+## My testapi
+
+```ruby
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -X DELETE
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "name" : "zhaofx"
+}
+```
+
+This endpoint deletes a specific kitten.
+
+### HTTP Request
+
+`POST http://example.com/kittens/<ID>&name=<name>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to delete
+name | the name of user
 
